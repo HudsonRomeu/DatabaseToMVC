@@ -1,0 +1,17 @@
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.exe.config
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\obj\Debug\DatabaseToMVC.csprojResolveAssemblyReference.cache
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\obj\Debug\DatabaseToMVC.FrmPrincipal.resources
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\obj\Debug\DatabaseToMVC.Properties.Resources.resources
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\obj\Debug\DatabaseToMVC.csproj.GenerateResource.Cache
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.exe
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\CustomTextBox.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.Controle.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.Modelo.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.Persistencia.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.Controle.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.Modelo.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\CustomTextBox.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\bin\Debug\DatabaseToMVC.Persistencia.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\obj\Debug\DatabaseToMVC.exe
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC\obj\Debug\DatabaseToMVC.pdb

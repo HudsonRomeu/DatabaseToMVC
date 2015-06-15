@@ -1,0 +1,9 @@
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\obj\Debug\DatabaseToMVC.Controle.csprojResolveAssemblyReference.cache
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Controle.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Controle.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Modelo.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Persistencia.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Modelo.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Persistencia.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\obj\Debug\DatabaseToMVC.Controle.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\obj\Debug\DatabaseToMVC.Controle.pdb

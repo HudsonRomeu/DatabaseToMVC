@@ -1,0 +1,5 @@
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\bin\Debug\DatabaseToMVC.Modelo.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\bin\Debug\DatabaseToMVC.Modelo.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.csprojResolveAssemblyReference.cache
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.pdb

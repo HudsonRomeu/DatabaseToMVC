@@ -1,0 +1,5 @@
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Persistencia\bin\Debug\DatabaseToMVC.Persistencia.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Persistencia\bin\Debug\DatabaseToMVC.Persistencia.pdb
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Persistencia\obj\Debug\DatabaseToMVC.Persistencia.csprojResolveAssemblyReference.cache
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Persistencia\obj\Debug\DatabaseToMVC.Persistencia.dll
+D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Persistencia\obj\Debug\DatabaseToMVC.Persistencia.pdb
