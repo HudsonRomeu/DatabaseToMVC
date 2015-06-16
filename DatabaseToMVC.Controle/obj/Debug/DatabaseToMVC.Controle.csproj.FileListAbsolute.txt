@@ -7,3 +7,12 @@ D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMV
 D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Persistencia.pdb
 D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\obj\Debug\DatabaseToMVC.Controle.dll
 D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Controle\obj\Debug\DatabaseToMVC.Controle.pdb
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Controle.dll
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Controle.pdb
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Modelo.dll
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Persistencia.dll
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Modelo.pdb
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\bin\Debug\DatabaseToMVC.Persistencia.pdb
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\obj\Debug\DatabaseToMVC.Controle.csprojResolveAssemblyReference.cache
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\obj\Debug\DatabaseToMVC.Controle.dll
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Controle\obj\Debug\DatabaseToMVC.Controle.pdb

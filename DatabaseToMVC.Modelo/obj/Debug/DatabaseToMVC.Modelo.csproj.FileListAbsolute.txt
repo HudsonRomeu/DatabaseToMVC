@@ -3,3 +3,8 @@ D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\bin\Debug\DatabaseToMVC.
 D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.csprojResolveAssemblyReference.cache
 D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.dll
 D:\Hypertec\Projetos\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.pdb
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Modelo\bin\Debug\DatabaseToMVC.Modelo.dll
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Modelo\bin\Debug\DatabaseToMVC.Modelo.pdb
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.csprojResolveAssemblyReference.cache
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.dll
+D:\GitHub\DatabaseToMVC\DatabaseToMVC.Modelo\obj\Debug\DatabaseToMVC.Modelo.pdb

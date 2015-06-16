@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.grbConexao = new System.Windows.Forms.GroupBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cbxBancoDados = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConectar = new System.Windows.Forms.Button();
@@ -51,6 +53,7 @@
             this.tsmMarcarTabelas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmMarcarViews = new System.Windows.Forms.ToolStripMenuItem();
             this.tbpOpcoesExportacao = new System.Windows.Forms.TabPage();
+            this.txtDiretorio = new System.Windows.Forms.TextBox();
             this.txtNamespace = new System.Windows.Forms.TextBox();
             this.grbOpcoesExportacao = new System.Windows.Forms.GroupBox();
             this.chkRemoverDeclaracaoView = new System.Windows.Forms.CheckBox();
@@ -62,9 +65,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbpLogs = new System.Windows.Forms.TabPage();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.txtDiretorio = new System.Windows.Forms.TextBox();
+            this.chkHyperLib = new System.Windows.Forms.CheckBox();
             this.grbConexao.SuspendLayout();
             this.tbcOpcoes.SuspendLayout();
             this.tbpDadosBanco.SuspendLayout();
@@ -92,6 +93,25 @@
             this.grbConexao.TabIndex = 0;
             this.grbConexao.TabStop = false;
             this.grbConexao.Text = "Dados da Conexão";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.ForeColor = System.Drawing.Color.Blue;
+            this.txtSenha.Location = new System.Drawing.Point(283, 48);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(140, 20);
+            this.txtSenha.TabIndex = 10;
+            this.txtSenha.Text = "master@123@@";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.ForeColor = System.Drawing.Color.Blue;
+            this.txtUsuario.Location = new System.Drawing.Point(74, 48);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(156, 20);
+            this.txtUsuario.TabIndex = 9;
+            this.txtUsuario.Text = "sa";
             // 
             // cbxBancoDados
             // 
@@ -295,6 +315,17 @@
             this.tbpOpcoesExportacao.Text = "Opções de Exportação";
             this.tbpOpcoesExportacao.Click += new System.EventHandler(this.pagOpcoesExportacao_Click);
             // 
+            // txtDiretorio
+            // 
+            this.txtDiretorio.BackColor = System.Drawing.Color.White;
+            this.txtDiretorio.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.txtDiretorio.ForeColor = System.Drawing.Color.Blue;
+            this.txtDiretorio.Location = new System.Drawing.Point(82, 15);
+            this.txtDiretorio.Name = "txtDiretorio";
+            this.txtDiretorio.Size = new System.Drawing.Size(401, 21);
+            this.txtDiretorio.TabIndex = 27;
+            this.txtDiretorio.Text = "C:\\";
+            // 
             // txtNamespace
             // 
             this.txtNamespace.BackColor = System.Drawing.Color.White;
@@ -310,12 +341,13 @@
             // 
             // grbOpcoesExportacao
             // 
+            this.grbOpcoesExportacao.Controls.Add(this.chkHyperLib);
             this.grbOpcoesExportacao.Controls.Add(this.chkRemoverDeclaracaoView);
             this.grbOpcoesExportacao.Controls.Add(this.chkExportarControles);
             this.grbOpcoesExportacao.Controls.Add(this.chkExportarModelos);
             this.grbOpcoesExportacao.Location = new System.Drawing.Point(16, 67);
             this.grbOpcoesExportacao.Name = "grbOpcoesExportacao";
-            this.grbOpcoesExportacao.Size = new System.Drawing.Size(498, 45);
+            this.grbOpcoesExportacao.Size = new System.Drawing.Size(498, 73);
             this.grbOpcoesExportacao.TabIndex = 25;
             this.grbOpcoesExportacao.TabStop = false;
             this.grbOpcoesExportacao.Text = "Opções de exportação";
@@ -325,7 +357,7 @@
             this.chkRemoverDeclaracaoView.AutoSize = true;
             this.chkRemoverDeclaracaoView.Checked = true;
             this.chkRemoverDeclaracaoView.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkRemoverDeclaracaoView.Location = new System.Drawing.Point(234, 19);
+            this.chkRemoverDeclaracaoView.Location = new System.Drawing.Point(13, 42);
             this.chkRemoverDeclaracaoView.Name = "chkRemoverDeclaracaoView";
             this.chkRemoverDeclaracaoView.Size = new System.Drawing.Size(258, 17);
             this.chkRemoverDeclaracaoView.TabIndex = 26;
@@ -416,35 +448,15 @@
             this.rtbLog.TabIndex = 27;
             this.rtbLog.Text = "";
             // 
-            // txtUsuario
+            // chkHyperLib
             // 
-            this.txtUsuario.ForeColor = System.Drawing.Color.Blue;
-            this.txtUsuario.Location = new System.Drawing.Point(74, 48);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(156, 20);
-            this.txtUsuario.TabIndex = 9;
-            this.txtUsuario.Text = "sa";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.ForeColor = System.Drawing.Color.Blue;
-            this.txtSenha.Location = new System.Drawing.Point(283, 48);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(140, 20);
-            this.txtSenha.TabIndex = 10;
-            this.txtSenha.Text = "master@123@@";
-            // 
-            // txtDiretorio
-            // 
-            this.txtDiretorio.BackColor = System.Drawing.Color.White;
-            this.txtDiretorio.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.txtDiretorio.ForeColor = System.Drawing.Color.Blue;
-            this.txtDiretorio.Location = new System.Drawing.Point(82, 15);
-            this.txtDiretorio.Name = "txtDiretorio";
-            this.txtDiretorio.Size = new System.Drawing.Size(401, 21);
-            this.txtDiretorio.TabIndex = 27;
-            this.txtDiretorio.Text = "C:\\";
+            this.chkHyperLib.AutoSize = true;
+            this.chkHyperLib.Location = new System.Drawing.Point(161, 19);
+            this.chkHyperLib.Name = "chkHyperLib";
+            this.chkHyperLib.Size = new System.Drawing.Size(325, 17);
+            this.chkHyperLib.TabIndex = 27;
+            this.chkHyperLib.Text = "Utilizar o padrão HyperLib (lib encontrada na pasta References)";
+            this.chkHyperLib.UseVisualStyleBackColor = true;
             // 
             // FrmPrincipal
             // 
@@ -510,6 +522,7 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtDiretorio;
+        private System.Windows.Forms.CheckBox chkHyperLib;
     }
 }
 

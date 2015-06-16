@@ -76,9 +76,8 @@ namespace DatabaseToMVC.Controle
                 foreach (string sUsing in conUsings)
                     stb.AppendLine(sUsing);
 
-                stb.AppendLine(String.Format("using {0}.Persistencia;", mdoBancoDados.Namespace));
+                stb.AppendLine(mdoBancoDados.UtilizarPadraoHyperLib ? "using HyperLib.Utils;" : String.Format("using {0}.Persistencia;", mdoBancoDados.Namespace));
                 stb.AppendLine(String.Format("using {0}.Modelos;", mdoBancoDados.Namespace));
-
 
                 //Cria o namespace
                 stb.AppendLine(string.Empty);
@@ -88,7 +87,14 @@ namespace DatabaseToMVC.Controle
                 //Cria a classe
                 stb.AppendLine(String.Format("    public class {0}", sNomeClasse));
                 stb.AppendLine("    {");
-                stb.AppendLine("        perComando comando = new perComando();");
+
+                if (mdoBancoDados.UtilizarPadraoHyperLib)
+                {
+                    stb.AppendLine("        ObjPersistence comando = new ObjPersistence(\"MASTER\");");
+                    stb.AppendLine(String.Format("        public const string cTabela = \"{0}\";", objTabela.tblNome));
+                }
+                else
+                    stb.AppendLine("        perComando comando = new perComando();");
                 stb.AppendLine(string.Empty);
 
                 //Escreve os métodos padrões (Buscar, Inserir, Alterar e Excluir)
@@ -110,6 +116,16 @@ namespace DatabaseToMVC.Controle
         
         private void EscreverMetodos(StringBuilder stb, string sNomeClasse, mdoTabelas objTabela, List<mdoColunas> objListColunas)
         {
+            if (mdoBancoDados.UtilizarPadraoHyperLib)
+            {
+                EscreverMetodoBuscarHyperLib(stb, sNomeClasse, objTabela, objListColunas);
+                EscreverMetodoInserirHyperLib(stb, sNomeClasse, objTabela, objListColunas);
+                EscreverMetodoAlterarHyperLib(stb, sNomeClasse, objTabela, objListColunas);
+                EscreverMetodoExcluirHyperLib(stb, sNomeClasse, objTabela);
+
+                return;
+            }
+
             EscreverMetodoBuscar(stb, sNomeClasse, objTabela, objListColunas);
             EscreverMetodoInserir(stb, sNomeClasse, objTabela, objListColunas);
             EscreverMetodoAlterar(stb, sNomeClasse, objTabela, objListColunas);
@@ -247,6 +263,124 @@ namespace DatabaseToMVC.Controle
             stb.AppendLine("        }");
             stb.AppendLine(string.Empty);
         }
+
+
+        private void EscreverMetodoBuscarHyperLib(StringBuilder stb, string sNomeClasse, mdoTabelas objTabela, List<mdoColunas> objListColunas)
+        {
+            stb.AppendLine("        public object Buscar(String parametroSQL)");
+            stb.AppendLine("        {");
+            stb.AppendLine("            try");
+            stb.AppendLine("            {");
+            stb.AppendLine("                String stringSQL = String.Format(\"SELECT * FROM @tabela {0} ORDER BY 1 ASC\", parametroSQL);".Replace("@tabela", objTabela.tblNome));
+            stb.AppendLine(String.Format("                var obj{0}Lista = new mdo{1}Lista();", sNomeClasse, sNomeClasse));
+            stb.AppendLine(String.Format("                DataTable dataTable{0} = comando.Pesquisar(stringSQL);", sNomeClasse));
+            stb.AppendLine(string.Empty);
+            stb.AppendLine(String.Format("                foreach (DataRow linha in dataTable{0}.Rows)", sNomeClasse));
+            stb.AppendLine("                {");
+            stb.AppendLine(String.Format("                    var obj{0} = new mdo{1}();", sNomeClasse, sNomeClasse));
+            foreach (var objColuna in listaColunas)
+            {
+                stb.AppendLine(String.Format("                    obj{0}.{1} = Convert.To{2}(linha[\"{3}\"]);", sNomeClasse, objColuna.colNome, ctrColunas.ObterTipoColuna(objColuna).Replace("?", ""), objColuna.colNome));
+            }
+            stb.AppendLine(String.Format("                    obj{0}Lista.Add(obj{1});", sNomeClasse, sNomeClasse));
+            stb.AppendLine("                }");
+            stb.AppendLine(String.Format("                return obj{0}Lista;", sNomeClasse));
+            stb.AppendLine("            }");
+            stb.AppendLine("            catch (Exception exception)");
+            stb.AppendLine("            {");
+            stb.AppendLine("                throw new Exception(exception.Message);");
+            stb.AppendLine("            }");
+            stb.AppendLine("        }");
+            stb.AppendLine(string.Empty);
+
+        }
+
+        private void EscreverMetodoInserirHyperLib(StringBuilder stb, string sNomeClasse, mdoTabelas objTabela, List<mdoColunas> objListColunas)
+        {
+            var sCampos = " string[] arrayCampos = new string[] { ";
+            var sParametros = " object[] arrayParametros = new object[] { ";
+
+            foreach (var objColuna in objListColunas)
+            {
+                sCampos += String.Format(" \"{0}\", ", objColuna.colNome);
+                sParametros += String.Format(" obj.{0}, ", objColuna.colNome);
+            }
+            sCampos = sCampos.Substring(0, sCampos.Trim().Length) + " }";
+            sParametros = sParametros.Substring(0, sParametros.Trim().Length) + " }";
+
+            stb.AppendLine(String.Format("        public void Incluir(mdo{0} obj)", sNomeClasse));
+            stb.AppendLine("        {");
+            stb.AppendLine("            try");
+            stb.AppendLine("            {");
+            stb.AppendLine(String.Format("                {0};", sCampos));
+            stb.AppendLine(String.Format("                {0};", sParametros));
+            stb.AppendLine("                objPersistencia.Inserir(cTabela, arrayCampos, arrayParametros);");
+            stb.AppendLine("            }");
+            stb.AppendLine("            catch (ConstraintException)");
+            stb.AppendLine("            {");
+            stb.AppendLine("                throw new Exception(\"Registros duplicados. Usuário já cadastrado.\");");
+            stb.AppendLine("            }");
+            stb.AppendLine("            catch (Exception exception)");
+            stb.AppendLine("            {");
+            stb.AppendLine("                throw new Exception(exception.Message);");
+            stb.AppendLine("            }");
+            stb.AppendLine("        }");
+            stb.AppendLine(string.Empty);
+        }
+
+        private void EscreverMetodoAlterarHyperLib(StringBuilder stb, string sNomeClasse, mdoTabelas objTabela, List<mdoColunas> objListColunas)
+        {
+            var sCampos = " string[] arrayCampos = new string[] { ";
+            var sParametros = " object[] arrayParametros = new object[] { ";
+
+            var sChavePrimaria = new ctrColunas().ObterColunaChavePrimaria(objTabela.tblNome);
+            foreach (var objColuna in objListColunas)
+            {
+                if (objColuna.colNome.Equals(sChavePrimaria))
+                    continue;
+
+                sCampos += String.Format(" \"{0}\", ", objColuna.colNome);
+                sParametros += String.Format(" obj.{0}, ", objColuna.colNome);
+            }
+            sCampos = sCampos.Substring(0, sCampos.Trim().Length) + " } ";
+            sParametros = sParametros.Substring(0, sParametros.Trim().Length) + " } ";
+
+            stb.AppendLine(String.Format("        public void Alterar(mdo{0} obj)", sNomeClasse));
+            stb.AppendLine("        {");
+            stb.AppendLine("            try");
+            stb.AppendLine("            {");
+            stb.AppendLine(String.Format("                {0};", sCampos));
+            stb.AppendLine(String.Format("                {0};", sParametros));
+            stb.AppendLine(String.Format("                objPersistencia.Alterar(cTabela, arrayCampos, arrayParametros, String.Format(\" where {1} = {0} \", obj.{2}));", 
+                "{0}", sChavePrimaria, sChavePrimaria));
+            stb.AppendLine("            }");
+            stb.AppendLine("            catch (Exception exception)");
+            stb.AppendLine("            {");
+            stb.AppendLine("                throw new Exception(exception.Message);");
+            stb.AppendLine("            }");
+            stb.AppendLine("        }");
+            stb.AppendLine(string.Empty);
+        }
+
+        private void EscreverMetodoExcluirHyperLib(StringBuilder stb, string sNomeClasse, mdoTabelas objTabela)
+        {
+            var sChavePrimaria = new ctrColunas().ObterColunaChavePrimaria(objTabela.tblNome);
+
+            stb.AppendLine(String.Format("        public void Excluir(mdo{0} obj)", sNomeClasse));
+            stb.AppendLine("        {");
+            stb.AppendLine("            try");
+            stb.AppendLine("            {");
+            stb.AppendLine(String.Format("                objPersistencia.Deletar(cTabela, String.Format(\" where {1} = {0} \", obj.{2}));", 
+                "{0}", sChavePrimaria, sChavePrimaria));
+            stb.AppendLine("            }");
+            stb.AppendLine("            catch (Exception exception)");
+            stb.AppendLine("            {");
+            stb.AppendLine("                throw new Exception(exception.Message);");
+            stb.AppendLine("            }");
+            stb.AppendLine("        }");
+            stb.AppendLine(string.Empty);
+        }
+
 
         private void ExportarModelos()
         {

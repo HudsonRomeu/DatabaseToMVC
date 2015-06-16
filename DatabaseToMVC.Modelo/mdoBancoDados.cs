@@ -22,6 +22,7 @@ namespace DatabaseToMVC.Modelo
         public static bool ExportarModelos { get; set; }
         public static bool ExportarControles { get; set; }
         public static bool RemoverDeclaracaoView { get; set; }
+        public static bool UtilizarPadraoHyperLib { get; set; }
 
         public static string ConnectionString
         {

@@ -81,11 +81,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseToMVC.Controle\DatabaseToMVC.Controle.csproj">
+    <ProjectReference Include="DatabaseToMVC.Controle\DatabaseToMVC.Controle.csproj">
       <Project>{3fb4543b-799e-47d2-9fc8-025b43b27e9c}</Project>
       <Name>DatabaseToMVC.Controle</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DatabaseToMVC.Modelo\DatabaseToMVC.Modelo.csproj">
+    <ProjectReference Include="DatabaseToMVC.Modelo\DatabaseToMVC.Modelo.csproj">
       <Project>{ff5b0d3d-76ad-4a09-91a2-9d110ab90a0d}</Project>
       <Name>DatabaseToMVC.Modelo</Name>
     </ProjectReference>

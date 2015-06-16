@@ -100,6 +100,7 @@ namespace DatabaseToMVC
             mdoBancoDados.ExportarModelos = chkExportarModelos.Checked;
             mdoBancoDados.ExportarControles = chkExportarControles.Checked;
             mdoBancoDados.RemoverDeclaracaoView = chkRemoverDeclaracaoView.Checked;
+            mdoBancoDados.UtilizarPadraoHyperLib = chkHyperLib.Checked;
 
 
             var objBancoDados = new ctrBancoDados();
